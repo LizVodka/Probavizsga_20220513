@@ -1,4 +1,9 @@
-# composer install
+# kódok
+composer install
+
+php artisan make:migration create_szakdogas_table
+
+
 
 ## Vizsgafeldat minta 2022 - webprogramozás
 ### Laravel és JQuery segítségével néhány végpontot tartalmazó ResApi alkalmazás létrehozása, mely backend és frontend részeket egyaránt tartalmaz 
