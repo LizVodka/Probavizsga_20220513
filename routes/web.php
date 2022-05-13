@@ -24,6 +24,7 @@ Route::get('/', function () {
 Route::get('/dashboard', [SzakdogaController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
 Route::post('/dashboard', [SzakdogaController::class, 'store']);
+Route::delete('/szakdogak/{id}', [SzakdogaController::class, 'destroy']);
 
 require __DIR__ . '/auth.php';
 

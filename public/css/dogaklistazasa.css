@@ -1,0 +1,123 @@
+.lista {
+    display: table;
+    width: 100%;
+}
+
+.fejlec {
+    background-color: black;
+    color: white;
+}
+
+.row, .fejlec {
+    display: table-row;
+    width: auto;
+}
+
+.row:nth-child(odd) {
+    background-color: lightgrey;
+}
+
+.divCell {
+    float: left;
+    display: table-column;
+}
+
+.szakdogacime {
+    width: 20%;
+}
+
+.tagok {
+    width: 20%;
+}
+
+.githublink {
+    width: 30%;
+}
+
+.oldallink {
+    width: 25;
+}
+
+.edit {
+    width: 5%;
+}
+
+.lista {
+    margin-bottom: 20px;
+}
+
+.sor {
+    text-align: right;
+}
+
+.gomb {
+    text-align: center;
+    border: 1px solid grey;
+    background-color: lightblue;
+    border-radius: 5px;
+    max-width: 100px;
+    margin-left: 20%;
+}
+.ujInput {
+    width: 80%;
+    margin-left: 20px;
+}
+
+.logo {
+    max-width: 30px;
+}
+
+@media (max-width: 800px) {
+    #header_githublink {
+        display: none;
+    }
+
+    #header_oldallink {
+        display: none;
+    }
+
+    .szakdogacime {
+        width: 50%;
+    }
+    
+    .tagok {
+        width: 50%;
+    }
+    
+    .githublink {
+        width: 50%;
+    }
+    
+    .oldallink {
+        width: 50;
+    }
+
+    .edit {
+        width: 100%;
+        text-align: right;
+    }
+
+    .githublink > a::before {
+        content: "GitHub link:\A ";
+        white-space: pre;
+    }
+
+    .oldallink > a::before {
+        content: "Webcím:\A ";
+        white-space: pre;
+    }
+
+    .divCell {
+        margin-bottom: 20px;
+    }
+
+    .sor {
+        text-align: left;
+    }
+
+    .ujInput {
+        width: 100%;
+        margin-left:0;
+        margin-bottom: 10px;
+    }
+}

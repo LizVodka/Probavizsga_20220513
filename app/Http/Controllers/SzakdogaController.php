@@ -38,9 +38,9 @@ class SzakdogaController extends Controller
     {
         $szakdoga = new Szakdoga();
         $szakdoga->szakdoga_nev = $request->szakdoga_nev;
-        $szakdoga->githublink = $request->tagokneve;
+        $szakdoga->githublink = $request->githublink;
         $szakdoga->oldallink = $request->oldallink;
-        $szakdoga->tagokneve = $request->githublink;
+        $szakdoga->tagokneve = $request->tagokneve;
 
         $szakdoga->save();
         return redirect('dashboard');
@@ -86,8 +86,9 @@ class SzakdogaController extends Controller
      * @param  \App\Models\Szakdoga  $szakdoga
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Szakdoga $szakdoga)
+    public function destroy($id)
     {
-        //
+        Szakdoga::where('id', $id)->delete();
+        return redirect('dashboard');
     }
 }
