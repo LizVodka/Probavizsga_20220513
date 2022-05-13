@@ -1,3 +1,11 @@
+# kódok
+composer install
+
+php artisan make:migration create_szakdogas_table
+
+php artisan make:model Project -m  // -m jelenti, hogy a modellhez migrációt is létre kívánunk hozni 
+
+php artisan make:controller ProjectController -m Project // -m Project a modellhez kapcsolódást jelenti
 
 
 ## Vizsgafeldat minta 2022 - webprogramozás
