@@ -15,25 +15,29 @@
                             <div class="fejlec">
                                 <div class="szakdogacime">Szakdolgozat címe</div>
                                 <div class="tagok">Készítők neve</div>
-                                <div class="githublink">GitHub link</div>
-                                <div class="oldallink">Szakdolgozat elérhetősége</div>
+                                <div class="githublink" id="header_githublink">GitHub link</div>
+                                <div class="oldallink" id="header_oldallink">Szakdolgozat elérhetősége</div>
                             </div>
-
-
-
-
+                           @foreach ($szakdogak as $szakdoga)
+                            <div class="row">
+                                <div class="szakdogacime">{{$szakdoga -> szakdoga_nev}}</div>
+                                <div class="tagok">{{$szakdoga -> tagokneve}}</div>
+                                <div class="githublink">{{$szakdoga -> githublink}}</div>
+                                <div class="oldallink">{{$szakdoga -> oldallink}}</div>
+                            </div>
+                            @endforeach
                         </div>
                     </div>
 
                     <div class="ujadat">
-                        <form>
+                    <form action="/dashboard" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                             <div style="display:none"><input type="text" id="id"></div>
-                            <div class="sor"><label for="szakdoga_nev">Szakdolgozat címe</label><input type="text" id="szakdoga_nev"></div>
-                            <div class="sor"><label for="tagokneve">Készítők neve</label><input type="text" id="tagokneve"></div>
-                            <div class="sor"><label for="oldallink">Az oldal elérhetősége </label><input type="text" id="oldallink"></div>
-                            <div class="sor"><label for="githublink"> GitHub elérhetőség</label><input type="text" id="githublink"></div>
-                            <div class="gomb"><button id="uj">Új</button>
-                                <button id="modosit">Módosít</button>
+                            <div class="sor"><label for="szakdoga_nev">Szakdolgozat címe</label><input type="text" id="szakdoga_nev" name="szakdoga_nev"></div>
+                            <div class="sor"><label for="tagokneve">Készítők neve</label><input type="text" id="tagokneve" name="tagokneve"></div>
+                            <div class="sor"><label for="oldallink">Az oldal elérhetősége </label><input type="text" id="oldallink" name="oldallink"></div>
+                            <div class="sor"><label for="githublink"> GitHub elérhetőség</label><input type="text" id="githublink" name="githublink"></div>
+                            <div class="gomb"><button type="submit" id="uj">Új</button>
                             </div>
                         </form>
                     </div>
